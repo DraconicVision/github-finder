@@ -28,6 +28,8 @@ This will build your static assets which will be used in production. This is wha
 
 #### test
 
+Unsure yet. TBD!
+
 #### eject
 
 God knows. Something to do with webpack. If you need to dig into the webpack configs this is what you would use. Currently the usage of this is beyond the scope of my knowledge and it's scary to me. Fear the eject script.
