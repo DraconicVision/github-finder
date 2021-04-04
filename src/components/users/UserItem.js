@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // This is a functional component, the component is a function rather than a class. Functional components do not require render()
 const UserItem = ({ user: { login, avatar_url, html_url } }) => {
@@ -19,6 +20,10 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
       </div>
     </div>
   );
+};
+
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired,
 };
 
 export default UserItem;

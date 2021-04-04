@@ -4,6 +4,10 @@ React is a client-side JS library. React is component based.
 
 Technically it's a library but most call it a framework as it functions like a framework, especially when combined with wildly popular React-specific Node packages.
 
+## A Note About this App
+
+This app is using Axios rather than fetch, fetch could be used in its place if preferred.
+
 ## What is a client-side JS library?
 
 The JS runs on the client device rather than the server, this means it takes up more CPU and RAM resources on the client device but reduces load on the server.
