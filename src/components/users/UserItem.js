@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserItem extends Component {
-  state = {
-    id: 'id',
-    login: 'mojombo',
-    avatar_url: 'https://avatars.githubusercontent.com/u/1?v=4',
-    html_url: 'https://github.com/mojombo',
-  };
-  render() {
-    const { login, avatar_url, html_url } = this.state;
-    return (
-      <div className='card text-center'>
-        <img
-          src={avatar_url}
-          alt=''
-          className='round-img'
-          // Inline style within JSX requires double {} as well as ''s around the style value.
-          style={{ width: '60px' }}
-        ></img>
-        <h3>{login}</h3>
-        <div>
-          <div href={html_url} className='btn btn-dark btn-sm my-1'>
-            More
-          </div>
+// This is a functional component, the component is a function rather than a class. Functional components do not require render()
+const UserItem = ({ user: { login, avatar_url, html_url } }) => {
+  return (
+    <div className='card text-center'>
+      <img
+        src={avatar_url}
+        alt=''
+        className='round-img'
+        // Inline style within JSX requires double {} as well as ''s around the style value.
+        style={{ width: '60px' }}
+      ></img>
+      <h3>{login}</h3>
+      <div>
+        <div href={html_url} className='btn btn-dark btn-sm my-1'>
+          More
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default UserItem;

@@ -38,3 +38,5 @@ Note, you can check an typecheck an entire application using TypeScript (a JS ex
 - React uses webpack which is a module bundler, using babel. This is mostly behind the scenes unless you're creating a very complex React app.
 
 - Setting a state on a component is just setting an object.
+
+- Generally, functional components are used when a component doesn't require a state. If a component requires state, use a class-based component. This is not strictly necessary though as with React hooks you can use state within functional components.
