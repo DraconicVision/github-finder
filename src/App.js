@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 // Using {} allows us to forget about using React. in-front of the elements within the {}s.
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
+import Search from './components/users/Search';
 import axios from 'axios';
 import './App.css';
 
@@ -17,7 +18,11 @@ class App extends Component {
   async componentDidMount() {
     // This sets the loading state to true, this can be used for lazy-loading.
     this.setState({ loading: true });
-    const res = await axios.get('https://api.github.com/users');
+    // This is using global variables specific to a local environment, this can be found in the .env.local file within the root directory.
+    const res = await axios.get(
+      `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      // Notice that this is using `` back-ticks rather than '' single quotes, back-ticks are needed when using variables within strings.
+    );
     this.setState({ users: res.data, loading: false });
   }
   render() {
@@ -25,6 +30,7 @@ class App extends Component {
       <Fragment>
         <Navbar />
         <div className='container'>
+          <Search />
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </Fragment>
