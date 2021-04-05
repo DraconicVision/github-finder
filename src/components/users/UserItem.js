@@ -14,9 +14,14 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
       ></img>
       <h3>{login}</h3>
       <div>
-        <div href={html_url} className='btn btn-dark btn-sm my-1'>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={html_url}
+          className='btn btn-dark btn-sm my-1'
+        >
           More
-        </div>
+        </a>
       </div>
     </div>
   );
